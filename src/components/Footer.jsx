@@ -36,11 +36,19 @@ export default function Footer() {
                 Design Your Room
               </Link>
             </li>
+            <li>
+              <a
+                href="https://youtu.be/jGeoDyv-Gys"
+                className="hover:underline me-4 md:me-6"
+              >
+                Happy Home, Happy You!
+              </a>
+            </li>
           </ul>
         </div>
         <hr className="my-6 border-[#f8f0e5] sm:mx-auto lg:my-8" />
         <span className="block text-sm text-[#f8f0e5] sm:text-center">
-          © 2024
+          © 2024{" "}
           <Link href="/" className="hover:underline me-4 md:me-6">
             Furnify!™
           </Link>

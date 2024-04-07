@@ -10,7 +10,7 @@ const ProductInfo = ({ p }) => {
   return (
     <>
       <div
-        className={`flex flex-row md:flex-col justify-start ${ivymode} gap-4 my-4 md:my-0`}
+        className={`flex flex-wrap md:flex-nowrap flex-row md:flex-col justify-start ${ivymode} gap-4 my-4 md:my-0`}
       >
         <div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-[#553939]">
@@ -20,13 +20,17 @@ const ProductInfo = ({ p }) => {
         </div>
         <span className="md:my-8"></span>
         <div className={`${montserrat}`}>
+          <div className="m-2 text-2xl">Colors </div>
+          <div className="m-2 text-sm md:text-md">
+            Explore/Change Colors in the 3D view
+          </div>
           {colors.map((c) => (
             <button
               key={c}
               className={
                 activeColor === c
-                  ? "bg-slate-200  mx-2 p-4 rounded-lg"
-                  : "border-2 border-black mx-2 p-4 rounded-lg"
+                  ? "bg-[#dac0a3] mx-2 p-4 rounded-lg border-2 border-[#553939]"
+                  : "border-2 border-[#553939] hover:bg-[#eadbc8] m-2 p-4 rounded-lg"
               }
               onClick={() => setActiveColor(c)}
             >

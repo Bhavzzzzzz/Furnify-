@@ -14,19 +14,19 @@ function About() {
           </p>
           <h1 className={`text-3xl mb-4 ${ivymode}`}>Our Story</h1>
           <p className={`my-9 ${montserrat}`}>
-            At Furnify, we believe that furniture isn't just about function –
-            it's about transforming spaces and creating experiences. Our journey
-            began 5th April, 2024 with a passion for craftsmanship and a vision
-            to redefine the way people furnish their homes. Since then, we've
-            grown into a trusted name in the industry, known for our commitment
-            to quality, style, and exceptional customer service.
+            At Furnify, we believe that furniture isn&apos;t just about function
+            – it&apos;s about transforming spaces and creating experiences. Our
+            journey began 5th April, 2024 with a passion for craftsmanship and a
+            vision to redefine the way people furnish their homes. Since then,
+            we&apos;ve grown into a trusted name in the industry, known for our
+            commitment to quality, style, and exceptional customer service.
           </p>
           <h1 className={`text-3xl mb-4 ${ivymode}`}>Our Mission</h1>
           <p className={`my-9 ${montserrat}`}>
             Our mission at Furnify is simple: to inspire and empower individuals
-            to create spaces they love. Whether you're furnishing a cozy
-            apartment, a family home, or a stylish office, we're here to help
-            you bring your vision to life. We believe that every piece of
+            to create spaces they love. Whether you&apos;re furnishing a cozy
+            apartment, a family home, or a stylish office, we&apos;re here to
+            help you bring your vision to life. We believe that every piece of
             furniture tells a story and that your home should reflect your
             unique personality and lifestyle.
           </p>
@@ -60,20 +60,49 @@ function About() {
             inbox.
           </p>
         </div>
-        <div className="invisible md:visible">
-          <Image alt="image" src="/images/about.png" height={400} width={400} />
+        <div className="invisible h-0 md:visible grayscale m-4 mt-20">
+          <Image
+            alt="image"
+            src="/about.jpg"
+            height={400}
+            width={400}
+            className="rounded-md"
+          />
         </div>
       </div>
       <p
-        className={`${montserrat} text-xl pb-9 text-[#553939] flex-row text-center`}
+        className={`${montserrat} text-2xl pb-9 text-[#553939] flex-row text-center`}
       >
         Thank you for choosing Furnify. We look forward to helping you create
         the home of your dreams!
       </p>
+      <div className="visible md:invisible md:h-0 flex justify-center grayscale">
+        <Image
+          alt="image"
+          src="/about.jpg"
+          height={400}
+          width={400}
+          className="rounded-md"
+        />
+      </div>
 
-      <ProfileCard name="Bhavya Jain" designation="3D Artist" />
-      <ProfileCard name="Chaitya Shah" designation="Mastermind" />
-      <ProfileCard name="Krish Patel" designation="Creative Genius" />
+      <div className="flex md:flex-row flex-col pb-4 mb-1">
+        <ProfileCard
+          image="/profile/bhax.jpg"
+          name="Bhavya Jain"
+          designation="😭"
+        />
+        <ProfileCard
+          image="/profile/chax.jpg"
+          name="Chaitya Shah"
+          designation="😎"
+        />
+        <ProfileCard
+          image="/profile/pat.jpg"
+          name="Krish Patel"
+          designation="😃"
+        />
+      </div>
     </>
   );
 }

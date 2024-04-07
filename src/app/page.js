@@ -1,149 +1,123 @@
 "use client";
 
-import { ivymode } from "@/Fonts/FontMan.js";
+import { ivymode, montserrat } from "@/Fonts/FontMan.js";
 import Carousel from "../components/Utility/Carousel.jsx";
 import BestSeller from "@/components/Utility/BestSeller.jsx";
-import { MdOutlineDoubleArrow } from "react-icons/md";
 import React, { Suspense } from "react";
+import Link from "next/link.js";
+import { SlArrowRightCircle } from "react-icons/sl";
+import { TbArmchair2 } from "react-icons/tb";
+import { IoBedOutline } from "react-icons/io5";
+import { MdOutlineTableBar } from "react-icons/md";
+import { PiCouchLight } from "react-icons/pi";
 
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
 export default function Home() {
-  const images = ["/images/i1.jpg", "/images/i2.jpg", "/images/i3.jpg"];
+  const CarouselImages = ["/images/i1.jpg", "/images/i2.jpg", "/images/i3.jpg"];
 
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between ${ivymode}`}
     >
-      {/* ////////// */}
-
-      <div id="default-carousel" className="w-full" data-carousel="slide">
-        {/* <!-- Carousel wrapper --> */}
-        <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-          {images.map((i) => (
-            <div
-              key={i}
-              className="hidden duration-700 ease-in-out"
-              data-carousel-item
-            >
-              <img
-                src={i}
-                className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
-              />
-            </div>
-          ))}
-        </div>
-        {/* <!-- Slider indicators --> */}
-        <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-          <button
-            type="button"
-            className="w-3 h-3 rounded-full"
-            aria-current="true"
-            aria-label="Slide 1"
-            data-carousel-slide-to="0"
-          ></button>
-          <button
-            type="button"
-            className="w-3 h-3 rounded-full"
-            aria-current="false"
-            aria-label="Slide 2"
-            data-carousel-slide-to="1"
-          ></button>
-          <button
-            type="button"
-            className="w-3 h-3 rounded-full"
-            aria-current="false"
-            aria-label="Slide 3"
-            data-carousel-slide-to="2"
-          ></button>
-          <button
-            type="button"
-            className="w-3 h-3 rounded-full"
-            aria-current="false"
-            aria-label="Slide 4"
-            data-carousel-slide-to="3"
-          ></button>
-          <button
-            type="button"
-            className="w-3 h-3 rounded-full"
-            aria-current="false"
-            aria-label="Slide 5"
-            data-carousel-slide-to="4"
-          ></button>
-        </div>
-        {/* <!-- Slider controls --> */}
-        <button
-          type="button"
-          className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-          data-carousel-prev
-        >
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg
-              className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 6 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 1 1 5l4 4"
-              />
-            </svg>
-            <span className="sr-only">Previous</span>
-          </span>
-        </button>
-        <button
-          type="button"
-          className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-          data-carousel-next
-        >
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg
-              className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 6 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m1 9 4-4-4-4"
-              />
-            </svg>
-            <span className="sr-only">Next</span>
-          </span>
-        </button>
-      </div>
-      {/* //////////// */}
-
       <div className="sm:w-full md:w-3/5 lg:w-5/6 mt-4">
         <Suspense
-          fallback={<div className="w-screen h-screen text-4xl">LOADING</div>}
+          fallback={
+            <div className="flex justify-center items-center text-4xl text-[#553939]">
+              LOADING...
+            </div>
+          }
         >
           <Spline scene="https://prod.spline.design/7Q6BdrThb-USp2wy/scene.splinecode" />
         </Suspense>
       </div>
+
       <p className="text-[#a77979] text-4xl md:text-6xl content-center text-center justify-center mt-4 mb-8 w-4/5">
-        'A <span className="text-[#6d2932]">revolutionary</span> online
+        &apos;A <span className="text-[#6d2932]">revolutionary</span> online
         <span className="text-[#6d2932]"> 3D </span> experience furniture
-        store.'
+        store&apos;
       </p>
-      <p className="text-[#6d2932] flex flex-row text-4xl md:text-4xl text-center justify-center mt-4 mb-8 w-4/5">
-        Design Your Room{" "}
-        <MdOutlineDoubleArrow className="mt-1 hover:bg-[#e8d8c4]" />
-      </p>
-      <p className="text-[#6d2932] text-4xl content-center text-center justify-center my-8">
-        Designed by us....
-      </p>
-      <Carousel images={images} />
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 md:m-6 w-[90vw]">
+        <div className={`col-span-2 w-full rounded-lg bg-white ${montserrat}`}>
+          <div className="text-[#472d2d] texl-xl px-6 mt-6">
+            SHOP BY CATEGORIES
+          </div>
+          <div className="text-[#986a4d] text-4xl px-6 mb-6">
+            DISCOVER CATEGORIES
+          </div>
+          <div className="text-[#986a4d] text-2xl grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 md:m-6">
+            <Link
+              href="products?category=all"
+              className="bg-[#f8f0e5] text-3xl text-[#472d2d] rounded-lg hover:bg-[#eadbc8] py-6 flex flex-col justify-center items-center ml-2 md:m-0"
+            >
+              All
+            </Link>
+            <Link
+              href="/products?category=chair"
+              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 mr-2 md:m-0"
+            >
+              <div className="flex justify-center mt-2 md:my-2">
+                <TbArmchair2 />
+              </div>
+              <div className="flex text-[#472d2d] justify-center mb-2">
+                Chairs
+              </div>
+            </Link>
+            <Link
+              href="products?category=bed"
+              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 ml-2 md:m-0"
+            >
+              <div className="flex justify-center mt-2 md:my-2">
+                <IoBedOutline />
+              </div>
+              <div className="flex text-[#472d2d] justify-center mb-2">
+                Beds
+              </div>
+            </Link>
+            <Link
+              href="products?category=table"
+              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 mr-2 md:m-0"
+            >
+              <div className="flex justify-center mt-2 md:my-2">
+                <MdOutlineTableBar />
+              </div>
+              <div className="flex text-[#472d2d] justify-center mb-2">
+                Tables
+              </div>
+            </Link>
+            <Link
+              href="products?category=sofa"
+              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 ml-2 mb-2 md:m-0"
+            >
+              <div className="flex justify-center mt-2 md:my-2">
+                <PiCouchLight />
+              </div>
+              <div className="flex text-[#472d2d] justify-center mb-2">
+                Sofas
+              </div>
+            </Link>
+          </div>
+        </div>
+        <div
+          className="bg-cover bg-center rounded-lg md:w-[30vw] md:h-[30vw] w-[420px] h-[420px]"
+          style={{ backgroundImage: 'url("/images/room.jpg")' }}
+        >
+          <Link
+            href="/furniture-editor"
+            className="flex flex-row justify-center md:w-[30vw] md:h-[30vw] w-[420px] h-[420px] absolute bg-gray-900/40 md:bg-gray-900/70 md:hover:bg-gray-900/40 transition-all duration-300 rounded-lg items-center p-2"
+          >
+            <span className="flex self-center text-4xl font-medium text-white">
+              Design Your Room
+              <span>
+                <SlArrowRightCircle className="mt-1 ml-2" />
+              </span>
+            </span>
+          </Link>
+        </div>
+      </div>
+
+      <Carousel images={CarouselImages} />
       <p className="text-center text-[#6d2932] text-4xl mt-10 w-full mx-6 ml-6">
         Best-Sellers
       </p>
